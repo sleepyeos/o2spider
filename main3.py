@@ -54,6 +54,8 @@ class Crawler:
             if base_url[-1] != '/' and link_url[0] != '/':
                 base_url = base_url + '/'
             fixed_url = base_url + link_url
+        if '?' in fixed_url:
+            fixed_url = fixed_url.split('?')[0]
         return fixed_url
 
     @staticmethod
