@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+    <title></title>
+
+    <style>
+      .search-result-div {
+	  border: 1px solid #ddd;
+	  margin: 10px;
+	  padding: 10px;
+      }
+      a {
+	  color: #222;
+      }
+    </style>
+
+    
+  </head>
+
+  <body>
+    <a href="/"><h2>TorScout</h2></a>
+    <form action="/search">
+      <input type="input" name="q"/>
+      <input type="submit" value="Go"/>
+    </form>
+    <br>
+    <a href="/explore">Explore</a>
+    <hr>
+    <span>Search results for: <strong>{{query}}</strong> [{{count}}]</span><br/>
+    {%for i in range(0,count)%}
+
+    <div class="search-result-div">
+      <a href="{{results[i].url}}">
+	<h3>{{results[i].title}}</h3>
+      </a>
+      
+      <span>Relevance: {{results[i].tfidf}}
+    </div>
+
+    {%endfor%}
+  </body>
+
+</html>

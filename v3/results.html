@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  </head>
+
+  <body>
+    Search results:<br/>
+    {%for i in range(0,count)%}
+
+    <div>
+      <a href="{{results[i].url}}">
+	<h3>{{results[i].title}}</h3>
+      </a>
+      <span>{{results[i].url}}</span><br/>
+
+      <span>Relevance: {{results[i].tfidf}}
+    </div>
+
+    {%endfor%}
+  </body>
+
+</html>
